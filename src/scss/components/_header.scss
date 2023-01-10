@@ -1,0 +1,42 @@
+@use "../utils/mixins/"as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  padding: 20px;
+  width: 100%;
+  color: var(--color-white);
+  transition-property: transform, background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+
+  &__inner {
+    @include flex-all-sb;
+  }
+
+  &__actions {
+    @include flex-v-center;
+
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 260px;
+  }
+
+  &__action {
+    width: 100%;
+    max-width: 120px;
+
+    &:not(:last-child) {
+      margin-right: 17px;
+    }
+  }
+
+  &.hide {
+    transform: translateY(-100%);
+  }
+
+  &.scroll {
+    background: var(--color-dark-400);
+  }
+}

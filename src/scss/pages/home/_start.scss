@@ -1,0 +1,80 @@
+@use "../../utils/mixins/"as*;
+@use "../../utils/functions/"as*;
+
+.start {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--color-white);
+  background-image: url("../images/home/start-bg.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--color-dark-400);
+
+  &__content {
+    margin-right: rem(160);
+    padding-top: rem(80);
+    width: 100%;
+    max-width: 395px;
+  }
+
+  &__title {
+    text-align: left;
+    color: inherit;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__item-title {
+    @include flex-v-center;
+
+    min-height: 54px;
+    text-align: left;
+    color: inherit;
+  }
+
+  &__steps {
+    padding-left: rem(64);
+  }
+
+  &__step {
+    counter-increment: steps;
+    position: relative;
+
+    &::before {
+      @include flex-all-center;
+      @include font-size(25, 30);
+
+      content: counter(steps);
+      position: absolute;
+      left: -64px;
+      top: 7px;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      font-weight: 900;
+      background: var(--color-gradient-main);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(41);
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: -44px;
+        bottom: -40px;
+        width: 1px;
+        height: 100%;
+        max-height: 80px;
+        background-color: var(--color-green-300);
+      }
+    }
+  }
+
+  &__picture {
+    max-width: 960px;
+  }
+}

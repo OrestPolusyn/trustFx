@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+
+<include src="./html/_head.html">
+  { "title": "Trust=>FX | Contact page"}
+</include>
+
+<body class="page__body">
+  <div class="site-container">
+    <include src="./html/_header.html"></include>
+
+    <main class="main">
+
+      <include src="./html/components/_wellcome.html">{
+        "image":"contact.png",
+        "title":"",
+        "titleColor":"Contacts"
+        }
+      </include>
+
+      <section class="contact">
+        <div class="container">
+          <h2 class="sr-only">
+            Contact page
+          </h2>
+
+          <include src="./html/contacts/_list.html"></include>
+
+          <include src="./html/contacts/_form.html"></include>
+
+            <ul class="social">
+              <li class="social__item">
+                <a class="social__link social__link--insta" href="#" target="_blank">
+                  <span class="sr-only">
+                    Link to instagram
+                  </span>
+                </a>
+              </li>
+
+              <li class="social__item">
+                <a class="social__link social__link--twitter" href="#" target="_blank">
+                  <span class="sr-only">
+                    Link to twitter
+                  </span>
+                </a>
+              </li>
+
+              <li class="social__item">
+                <a class="social__link social__link--telegram" href="#" target="_blank">
+                  <span class="sr-only">
+                    Link to telegram
+                  </span>
+                </a>
+              </li>
+            </ul>
+        </div>
+      </section>
+
+      <picture>
+        <source srcset="./images/map.jpg?as=webp" type="image/webp">
+        <img class="contact__map" src="./images/map.jpg" width="1920" height="400" alt="Address on google map"
+          loading="lazy">
+      </picture>
+    </main>
+
+    <include src="./html/_footer.html"></include>
+
+  </div>
+</body>
+
+</html>

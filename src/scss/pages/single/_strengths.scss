@@ -1,0 +1,89 @@
+@use "../../utils/mixins/"as*;
+@use "../../utils/functions/"as*;
+
+.strengths {
+  margin-bottom: rem(23);
+
+  &__title {
+    @include font-size(24, 28);
+
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(30);
+  }
+
+  &__item {
+    counter-increment: strengths;
+    overflow: hidden;
+    border-radius: var(--radius-main);
+    padding: 17px;
+    background-color: var(--color-white);
+
+    &::before {
+      @include color-gradient;
+      @include font-size(85, 100);
+
+      content: counter(strengths, decimal-leading-zero);
+      position: absolute;
+      font-family: var(--font-family-secondary);
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      background: url("../images/list-counter/manager.png"), linear-gradient(180deg, #80d0c8 0%, #0596e8 100%);
+      background-position: center;
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-clip: text;
+    }
+
+    &--manager {
+      &::before {
+        background-image: url("../images/list-counter/manager.png"), linear-gradient(180deg, #80d0c8 0%, #0596e8 100%);
+      }
+    }
+
+    &--traders {
+      &::before {
+        background-image: url("../images/list-counter/traders.png"), linear-gradient(180deg, #80d0c8 0%, #0596e8 100%);
+      }
+    }
+
+    &--support {
+      &::before {
+        background-image: url("../images/list-counter/support.png"), linear-gradient(180deg, #80d0c8 0%, #0596e8 100%);
+      }
+    }
+
+    &--respect {
+      &::before {
+        background-image: url("../images/list-counter/respect.png"), linear-gradient(180deg, #80d0c8 0%, #0596e8 100%);
+      }
+    }
+  }
+
+  &__item-title {
+    position: relative;
+    margin-bottom: 25px;
+    text-align: left;
+
+    &::before {
+      @include line-gradient;
+
+      background: var(--color-gradient-side);
+    }
+  }
+
+  &__content {
+    margin-left: auto;
+    width: 100%;
+    max-width: 240px;
+  }
+
+  &__text {
+    @include font-size(12, 19);
+  }
+}

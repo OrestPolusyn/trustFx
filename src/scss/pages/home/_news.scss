@@ -1,0 +1,11 @@
+@use "../../utils/mixins/"as*;
+@use "../../utils/functions/"as*;
+
+.news {
+  padding-bottom: rem(127);
+  background: var(--gradient-background);
+
+  &__list {
+    @include flex-all-sb;
+  }
+}
