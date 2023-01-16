@@ -1,0 +1,50 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+.contact {
+  &__form {
+    overflow: hidden;
+    margin-bottom: rem(37);
+    border-radius: var(--radius-main);
+    padding: rem(46) rem(65) rem(40);
+    box-shadow: var(--shadow-ligth);
+    text-align: center;
+    background-color: var(--color-white);
+  }
+
+  &__title {
+    margin-bottom: 13px;
+  }
+}
+
+.form {
+  &__area {
+    @include flex-all-sb;
+
+    margin-bottom: 30px;
+  }
+
+  &__label {
+    display: block;
+    overflow: hidden;
+    border: 1px solid rgba(26, 26, 26, 0.1);
+    border-radius: 10px;
+    padding: 14px 20px;
+    width: 100%;
+    max-width: 475px;
+    text-align: left;
+  }
+
+  &__message {
+    margin-bottom: rem(30);
+    width: 100%;
+    max-width: none;
+    max-height: 135px;
+    resize: none;
+  }
+
+  &__btn {
+    margin: 0 auto;
+    max-width: 255px;
+  }
+}

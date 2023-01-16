@@ -1,0 +1,20 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+.contact {
+  padding: rem(100) 0;
+
+  &__map {
+    width: 100%;
+  }
+
+  .social {
+    &__link {
+      background-color: var(--color-white);
+
+      &::before {
+        background: var(--color-gradient-main);
+      }
+    }
+  }
+}
