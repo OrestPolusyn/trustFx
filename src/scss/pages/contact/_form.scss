@@ -10,10 +10,31 @@
     box-shadow: var(--shadow-ligth);
     text-align: center;
     background-color: var(--color-white);
+
+    .form__label {
+      &:not(:last-child) {
+        margin-right: rem(30);
+
+        @include media(mobile-s) {
+          margin-right: 0;
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    @include media(tablet-wide) {
+      padding: rem(30);
+    }
   }
 
   &__title {
     margin-bottom: 13px;
+
+    @include media(mobile-s) {
+      @include font-size(20, 20);
+
+      margin-bottom: 18px;
+    }
   }
 }
 
@@ -22,17 +43,31 @@
     @include flex-all-sb;
 
     margin-bottom: 30px;
+
+    @include media(mobile-s) {
+      display: block;
+      margin-bottom: 12px;
+    }
   }
 
   &__label {
     display: block;
-    overflow: hidden;
     border: 1px solid rgba(26, 26, 26, 0.1);
     border-radius: 10px;
-    padding: 14px 20px;
     width: 100%;
     max-width: 475px;
     text-align: left;
+    background-color: var(--color-white);
+  }
+
+  &__input {
+    padding: 14px 20px;
+    width: 100%;
+    background-color: transparent;
+
+    &::placeholder {
+      text-transform: capitalize;
+    }
   }
 
   &__message {
@@ -46,5 +81,14 @@
   &__btn {
     margin: 0 auto;
     max-width: 255px;
+  }
+
+  .selectric-wrapper {
+    padding: 14px 10px 14px rem(30);
+    color: var(--color-gray-150);
+  }
+
+  .selectric .label {
+    justify-content: flex-start;
   }
 }

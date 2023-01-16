@@ -1,4 +1,5 @@
 @use "../utils/mixins/"as*;
+@use "../utils/functions/"as*;
 
 .paymants {
   display: grid;
@@ -26,5 +27,10 @@
     &--visa {
       height: 8px;
     }
+  }
+
+  @include media(tablet) {
+    display: flex;
+    flex-wrap: wrap;
   }
 }

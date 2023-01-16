@@ -21,6 +21,10 @@
     height: 70px;
     max-width: 80px;
     object-fit: contain;
+
+    @include media(mobile-s) {
+      max-width: 70px;
+    }
   }
 
   &__prices {
@@ -38,6 +42,14 @@
       opacity: 0.3;
       transform: scale(-1, -1);
     }
+
+    @include media(mobile-m) {
+      padding: 10px;
+    }
+
+    @include media(mobile-s) {
+      flex-direction: column;
+    }
   }
 
   &__price {
@@ -48,5 +60,9 @@
         font-weight: 900;
       }
     }
+  }
+
+  @include media(mobile-m) {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -37,4 +37,12 @@
       display: block;
     }
   }
+
+  @include media(tablet) {
+    padding: rem(150) 0 rem(70);
+  }
+
+  @include media(mobile-l) {
+    padding: rem(120) 0 rem(70);
+  }
 }

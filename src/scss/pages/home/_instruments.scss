@@ -4,6 +4,10 @@
 .instruments {
   background-color: var(--color-white);
 
+  &__title {
+    text-align: center;
+  }
+
   &__list {
     position: relative;
     z-index: 1;
@@ -11,6 +15,10 @@
     grid-template-columns: repeat(3, 1fr);
     color: var(--color-white);
     gap: rem(30);
+
+    @include media(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__item {
@@ -18,6 +26,8 @@
     overflow: hidden;
     border-radius: var(--radius-main);
     padding: rem(24) rem(26) 22px;
+    width: 100%;
+    max-width: 350px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -64,12 +74,41 @@
       .instruments__icon {
         margin-bottom: rem(90);
       }
+
+      @include media(tablet) {
+        grid-column: 1 / span 2;
+      }
+
+      @include media(mobile-s) {
+        max-width: 140px;
+      }
+    }
+
+    @include media(tablet) {
+      justify-self: center;
+      padding: 10px;
     }
   }
 
-  &__icon {
+  &__icon.instruments__icon {
+    width: 100%;
     height: 72px;
     max-width: 72px;
+    object-fit: contain;
+
+    @include media(tablet-wide) {
+      margin-bottom: rem(40);
+    }
+
+    @include media(tablet) {
+      margin: 0 auto 15px;
+      height: auto;
+      max-width: 50px;
+    }
+
+    @include media(mobile-s) {
+      max-width: 32px;
+    }
   }
 
   &__item-title {
@@ -88,6 +127,10 @@
       height: 1px;
       max-width: 125px;
       background: var(--color-gradient-side);
+
+      @include media(mobile-s) {
+        bottom: -5px;
+      }
     }
 
     &::after {
@@ -103,10 +146,30 @@
       color: transparent;
       opacity: 0.3;
       transform: translate(9px, -16px);
+
+      @include media(mobile-s) {
+        transform: translate(5px, -16px);
+      }
+    }
+
+    @include media(mobile-s) {
+      margin-bottom: 15px;
     }
   }
 
   &__text {
     @include font-size(16, 26);
+
+    @include media(mobile-s) {
+      @include font-size(12, 19);
+    }
+  }
+
+  @include media(mobile-l) {
+    padding: 40px 0;
+  }
+
+  @include media(mobile-m) {
+    padding: 20px 0;
   }
 }

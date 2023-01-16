@@ -50,4 +50,8 @@
       }
     }
   }
+
+  @include media(mobile-l) {
+    display: none;
+  }
 }

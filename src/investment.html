@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+
+<include src="./html/_head.html">
+  { "title": "Trust=>FX | Investment Plan"}
+</include>
+
+<body class="page__body">
+  <div class="site-container">
+    <include src="./html/_header.html"></include>
+
+    <main class="main">
+
+      <include src="./html/components/_wellcome.html">{
+        "image":"investment.png",
+        "title":"Investment",
+        "titleColor":"Plan"
+        }
+      </include>
+
+      <section class="single">
+        <div class="container">
+          <div class="single__inner">
+
+            <nav class="single__navigation">
+              <ul class="links">
+                <include src="./html/components/_tab.html">{
+                  "text":"Investment plan",
+                  "active":"links__btn--active"
+                  }
+                </include>
+
+                <include src="./html/components/_tab.html">{
+                  "text":"Cash-in",
+                  "active":""
+                  }
+                </include>
+
+                <include src="./html/components/_tab.html">{
+                  "text":"Cash-out",
+                  "active":""
+                  }
+                </include>
+
+                <include src="./html/components/_tab.html">{
+                  "text":"Guarantees",
+                  "active":""}
+                </include>
+              </ul>
+
+              <include src="./html/components/_live-demo.html"></include>
+
+            </nav>
+
+            <div class="single__content single__content--out">
+
+              <include src="./html/investment/_days.html"></include>
+
+              <include src="./html/investment/_week.html"></include>
+
+              <include src="./html/investment/_vip.html"></include>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    </main>
+
+    <include src="./html/_footer.html"></include>
+
+  </div>
+</body>
+
+</html>

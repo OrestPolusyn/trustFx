@@ -11,6 +11,14 @@ h1 {
   font-family: var(--font-family-secondary);
   font-weight: 900;
 
+  @include media(tablet) {
+    @include font-size(43, 68);
+  }
+
+  @include media(mobile-m) {
+    @include font-size(27, 30);
+  }
+
   span {
     @include color-gradient;
 
@@ -23,6 +31,16 @@ h1 {
     margin-bottom: rem(27);
     letter-spacing: 0.01em;
     color: var(--color-dark-400);
+
+    @include media(tablet) {
+      @include font-size(35, 42);
+    }
+
+    @include media(mobile-m) {
+      @include font-size(20, 24);
+
+      letter-spacing: -0.2px;
+    }
   }
 
   &--main {
@@ -34,6 +52,10 @@ h1 {
 
   &--middle {
     @include font-size(24, 28);
+
+    @include media(mobile-m) {
+      @include font-size(20, 20);
+    }
   }
 
   &--small {

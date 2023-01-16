@@ -20,12 +20,11 @@
     opacity: 0.3;
   }
 
-  &__item {
+  &__item.slick-slide {
     @include flex-all-sb;
 
     position: relative;
     padding: 17px rem(24) 22px;
-    width: 100%;
 
     &:not(:last-child) {
       &::before {
@@ -39,18 +38,29 @@
         opacity: 0.3;
       }
     }
+
+    @include media(mobile-s) {
+      padding: 15px 20px;
+    }
   }
 
   &__graph {
     width: 100%;
     max-width: 70px;
     max-height: 33px;
+
+    @include media(mobile-m) {
+      position: absolute;
+      right: 10px;
+      top: 15px;
+    }
   }
 
   &__data {
     @include flex;
 
     flex-direction: column;
+    margin-right: 20px;
 
     span {
       @include font-size(12, 19);
@@ -77,5 +87,9 @@
     .charts__alpha {
       color: var(--color-green-400);
     }
+  }
+
+  .slick-list {
+    max-width: 99%;
   }
 }

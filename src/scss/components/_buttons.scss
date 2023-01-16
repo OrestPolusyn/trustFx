@@ -3,12 +3,13 @@
 
 .btn {
   @include font-size(18, 21);
+  @include flex-all-center;
 
   position: relative;
   display: block;
   border-width: 0;
   border-radius: var(--radius-btn);
-  padding: clamp(10px, rem(21), 20px) clamp(10px, rem(18), 18px) clamp(10px, rem(18), 16px);
+  padding: 20px clamp(10px, rem(18), 18px);
   width: 100%;
   height: fit-content;
   font-family: var(--font-family-secondary);
@@ -26,6 +27,10 @@
     }
   }
 
+  &--text {
+    @include color-gradient;
+  }
+
   &--fill {
     background: linear-gradient(180deg, #103d8f 0%, #0d2042 100%);
   }
@@ -33,6 +38,10 @@
   &--partnership {
     padding: rem(20) 10px;
     max-width: 255px;
+  }
+
+  @include media(mobile-l) {
+    padding: 17px;
   }
 }
 
@@ -45,6 +54,10 @@
 
   &:not(:last-child) {
     margin-bottom: rem(30);
+
+    @include media(mobile-l) {
+      margin-bottom: 0;
+    }
   }
 
   &__text {
@@ -72,5 +85,9 @@
       font-weight: 400;
       letter-spacing: -0.03em;
     }
+  }
+
+  @include media(mobile-l) {
+    padding: 15px 8px;
   }
 }

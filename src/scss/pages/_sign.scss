@@ -5,6 +5,7 @@
   display: grid;
   align-items: center;
   grid-template-columns: 1fr;
+  padding: 0 15px;
   padding-top: var(--header-height);
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
@@ -17,7 +18,7 @@
     z-index: 1;
     overflow-x: clip;
     overflow-y: auto;
-    margin: 0 auto rem(30);
+    margin: rem(30) auto;
     border-radius: var(--radius-main);
     padding: rem(37) rem(20);
     width: 100%;
@@ -37,6 +38,10 @@
       @include color-gradient;
 
       margin-bottom: 15px;
+
+      @include media(mobile-sm) {
+        @include font-size(30, 35);
+      }
     }
 
     &__label {
@@ -59,7 +64,19 @@
     text-decoration: underline;
   }
 
+  p {
+    @include media(mobile-sm) {
+      display: grid;
+    }
+  }
+
   &--registration {
     @include font-size(16, 29);
+
+    p {
+      @include media(mobile-s) {
+        display: grid;
+      }
+    }
   }
 }

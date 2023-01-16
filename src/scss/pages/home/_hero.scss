@@ -22,6 +22,23 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+
+    @include media(desktop) {
+      max-width: 500px;
+      max-height: 500px;
+    }
+
+    @include media(tablet) {
+      left: -10%;
+      max-width: 400px;
+      max-height: 400px;
+    }
+
+    @include media(mobile-s) {
+      left: -60%;
+      max-height: 600px;
+      background-size: 130% 90%;
+    }
   }
 
   &__content {
@@ -49,6 +66,18 @@
 
       display: block;
     }
+
+    @include media(tablet) {
+      @include font-size(55, 55);
+    }
+
+    @include media(mobile-m) {
+      @include font-size(40, 40);
+    }
+
+    @include media(mobile-s) {
+      @include font-size(35, 35);
+    }
   }
 
   &__text {
@@ -59,6 +88,10 @@
     max-width: 435px;
     text-align: center;
     color: var(--color-white);
+
+    @include media(mobile-m) {
+      @include font-size(16, 24);
+    }
   }
 
   &__btn {

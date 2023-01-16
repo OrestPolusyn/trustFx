@@ -1,0 +1,481 @@
+@use "../../utils/mixins/"as*;
+@use "../../utils/functions/"as*;
+
+.calculate {
+  @include flex;
+
+  border-radius: var(--radius-main);
+  box-shadow: var(--shadow-ligth);
+  background-color: var(--color-white);
+
+  &__ammount {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-main);
+    padding: 17px 20px 0;
+    width: 100%;
+    height: auto;
+    max-width: 255px;
+
+    &::before {
+      @include gradient;
+
+      z-index: 0;
+      background: var(--color-calc);
+      opacity: 0.3;
+    }
+
+    >* {
+      position: relative;
+    }
+
+    @include media(tablet) {
+      max-width: none;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: rem(35);
+
+    &::before {
+      @include line-gradient;
+
+      bottom: -14px;
+      background: var(--color-gradient-side);
+    }
+  }
+
+  &__percents {
+    @include flex-all-center;
+
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 24px;
+    border: 1px solid var(--color-gray-100);
+    border-radius: calc(2 * var(--radius-main));
+    width: fit-content;
+
+    @include media(tablet) {
+      margin: 0 auto 30px;
+    }
+  }
+
+  &__number {
+    display: block;
+    padding: 15px 27px;
+    cursor: pointer;
+  }
+
+  &__radio {
+    position: absolute;
+
+    &:checked {
+      +.calculate__number {
+        background: var(--color-white);
+      }
+    }
+  }
+
+  &__result {
+    @include flex-v-center;
+
+    margin-bottom: rem(80);
+
+    @include media(tablet) {
+      justify-content: center;
+      margin: 0 auto 30px;
+    }
+  }
+
+  &__result-title {
+    margin-right: 14px;
+  }
+
+  &__result-field {
+    position: relative;
+    display: flex;
+    border: 1px solid var(--color-gray-100);
+    border-radius: calc(2 * var(--radius-main));
+    max-width: 135px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 1px;
+      top: 1px;
+      border-top-right-radius: calc(1.8 * var(--radius-main));
+      border-bottom-right-radius: calc(1.8 * var(--radius-main));
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      max-width: 40px;
+      background-color: var(--color-white);
+    }
+
+    &::after {
+      @include color-gradient;
+      @include flex-all-center;
+
+      content: "$";
+      position: relative;
+      width: 100%;
+      max-width: 40px;
+      font-weight: 900;
+    }
+
+    input {
+      @include font-size(16, 19);
+
+      padding: 14px 18px;
+      width: 100%;
+      letter-spacing: -0.03em;
+    }
+  }
+
+  &__total {
+    @include flex-all-sb;
+
+    position: relative;
+    padding: 11px 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      width: 200%;
+      height: 100%;
+      background: var(--color-gradient-main);
+    }
+
+    >* {
+      position: relative;
+    }
+
+    span {
+      display: block;
+      font-weight: 700;
+      color: var(--color-white);
+    }
+
+    @include media(tablet) {
+      justify-content: center;
+    }
+  }
+
+  &__total-title {
+    @include font-size(16, 16);
+
+    max-width: 70px;
+  }
+
+  &__total-number {
+    @include font-size(30, 30);
+  }
+
+  &__additional {
+    @include flex-v-center;
+
+    span {
+      display: block;
+
+      @include media(tablet) {
+        text-align: center;
+      }
+    }
+
+    &:not(.calculate__additional--simple) {
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      @include media(tablet) {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__additional-item {
+    &:not(:last-child) {
+      margin-right: rem(30);
+    }
+  }
+
+  &__additional-number {
+    @include font-size(24, 28);
+    @include color-gradient;
+
+    font-family: var(--font-family-secondary);
+    font-weight: 900;
+  }
+
+  &__additional-text {
+    @include font-size(12, 14);
+
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    &:not(.calculate__content--table) {
+      padding: 17px 30px 10px;
+
+      @include media(mobile-m) {
+        padding: 15px;
+      }
+    }
+  }
+
+  &__content-box {
+    position: relative;
+    margin-top: auto;
+    padding: 17px 30px 10px;
+
+    @include media(mobile-m) {
+      padding: 15px;
+    }
+  }
+
+  &__content-numbers {
+    @include flex;
+
+    position: relative;
+    align-items: flex-end;
+    margin-bottom: rem(45);
+
+    &::before {
+      @include line-gradient;
+
+      bottom: rem(-23);
+    }
+
+    .calculate__additional {
+      margin-right: rem(50);
+
+      @include media(mobile-s) {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+
+    @include media(tablet) {
+      align-items: center;
+    }
+
+    @include media(mobile-s) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include media(tablet) {
+      align-items: center;
+    }
+  }
+
+  &__minmax {
+    @include media(mobile-s) {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+  }
+
+  &__minmax-item {
+    @include font-size(12, 12);
+
+    span {
+      font-weight: 700;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__checks {
+    @include flex-all-sb;
+
+    position: relative;
+    margin-top: 16px;
+
+    &::after {
+      @include line-gradient;
+
+      top: -10px;
+      margin: 0 auto;
+    }
+
+    @include media(mobile-s) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+  }
+
+  &__check {
+    @include font-size(12, 12);
+
+    position: relative;
+    padding-left: 19px;
+    font-weight: 900;
+    color: var(--color-green-400);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      background-image: url("../icons/checked-accept.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__table {
+    @include media(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 15px;
+      gap: 10px;
+    }
+  }
+
+  &__table-item {
+    @include flex-all-sb;
+
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      @include line-gradient;
+
+      bottom: 0;
+      margin: 0 auto;
+
+      @include media(tablet) {
+        display: none;
+      }
+    }
+
+    input {
+      position: absolute;
+
+      &:checked+label {
+        color: var(--color-white);
+        background-color: var(--color-dark-400);
+
+        div {
+          span {
+            color: var(--color-white) !important;
+          }
+        }
+
+        @include media(tablet) {
+          background: linear-gradient(180deg, #103d8f 0%, #0d2042 100%);
+        }
+      }
+    }
+
+    &--name {
+      padding: 10px 30px 12px rem(50);
+      font-weight: 900;
+
+      &:first-child {
+        padding-left: rem(30);
+      }
+
+      @include media(tablet) {
+        display: none;
+      }
+    }
+
+    @include media(tablet) {
+      border-radius: var(--radius-main);
+      box-shadow: var(--shadow-ligth);
+    }
+  }
+
+  &__table-point {
+    position: relative;
+
+    &:not(:last-child)::after {
+      @include line-gradient;
+
+      display: none;
+      margin: 0 auto;
+
+      @include media(tablet) {
+        display: block;
+      }
+    }
+
+    span {
+      &:first-of-type {
+        display: none;
+
+        @include media(tablet) {
+          @include font-size(14, 16);
+
+          display: block;
+        }
+      }
+
+      &:last-of-type {
+        @include media(tablet) {
+          @include color-gradient;
+        }
+      }
+    }
+
+    &:first-child {
+      span:last-of-type {
+        @include color-gradient;
+
+        font-family: var(--font-family-secondary);
+        font-weight: 700;
+      }
+    }
+
+    @include media(tablet) {
+      @include flex-all-sb;
+
+      padding: 10px;
+      width: 100%;
+      font-weight: 700;
+    }
+
+    @include media(mobile-m) {
+      padding: 8px 0;
+    }
+  }
+
+  &__table-radio {
+    @include flex-all-sb;
+
+    padding: 12px 30px 12px rem(50);
+    width: 100%;
+    cursor: pointer;
+
+    @include media(tablet) {
+      flex-direction: column;
+      padding: 5px;
+    }
+  }
+
+  p {
+    @include font-size(12, 19);
+
+    letter-spacing: 0.5px;
+  }
+
+  @include media(tablet) {
+    flex-direction: column;
+  }
+}

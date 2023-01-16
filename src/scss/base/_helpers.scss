@@ -83,4 +83,10 @@
   @include custom-checkbox;
 
   letter-spacing: -0.03em;
+
+  &__content {
+    @include media(mobile-sm) {
+      display: grid;
+    }
+  }
 }

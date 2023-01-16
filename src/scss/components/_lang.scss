@@ -1,4 +1,62 @@
-.lang {
+@use "../utils/functions/"as*;
+
+.selectric-lang {
+  margin-right: rem(40);
   width: 100%;
   max-width: 218px;
+
+  @include media(desktop-wide) {
+    margin-right: 20px;
+    width: auto;
+  }
+
+  @include media(tablet) {
+    margin-right: 40px;
+    margin-left: auto;
+  }
+}
+
+.selectric .label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.selectric-flag {
+  margin-right: 15px;
+  width: 31px;
+  height: 24px;
+
+  @include media(tablet) {
+    margin-right: 10px;
+  }
+}
+
+.selectric-lang .button:after {
+  background-color: var(--color-white);
+}
+
+.selectric-link {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.selectric-lang .label span {
+  @include media(desktop-wide) {
+    display: none;
+  }
+}
+
+.selectric-link span {
+  @include media(desktop-wide) {
+    display: none;
+  }
+}
+
+.selectric-link .selectric-flag {
+  @include media(desktop-wide) {
+    margin: 0 auto;
+  }
 }

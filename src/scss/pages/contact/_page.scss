@@ -6,6 +6,8 @@
 
   &__map {
     width: 100%;
+    min-height: 400px;
+    object-fit: cover;
   }
 
   .social {
@@ -16,5 +18,13 @@
         background: var(--color-gradient-main);
       }
     }
+  }
+
+  @include media(tablet-wide) {
+    padding: rem(70) 0;
+  }
+
+  @include media(mobile-l) {
+    padding: rem(40) 0;
   }
 }

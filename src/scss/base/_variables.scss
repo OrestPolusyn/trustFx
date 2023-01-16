@@ -10,6 +10,7 @@
 
   // colors
   --color-white: #fff;
+  --color-dark-300: #0c224a;
   --color-dark-400: #1a1b24;
   --color-red-400: #e20403;
   --color-green-400: #378352;
@@ -25,7 +26,8 @@
   --color-gradient-border: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 50.07%, rgba(255, 255, 255, 0) 100%);
   --color-gradient-tab: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #aaaaaa 52.31%, rgba(255, 255, 255, 0) 100%);
   --color-gradient-forex: linear-gradient(180deg, #0d234a 0%, #6dc7cd 100%);
-  --color-tab-active: linear-gradient(90deg, #0C99E7 0%, rgba(250, 250, 250, 0) 55.49%);
+  --color-tab-active: linear-gradient(90deg, #0c99e7 0%, rgba(250, 250, 250, 0) 55.49%);
+  --color-calc: linear-gradient(270deg, #0c99e7 0%, rgba(250, 250, 250, 0) 84.44%);
   --color-gradient-article: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 51.56%, rgba(0, 0, 0, 0) 100%);
   --gradient-background: linear-gradient(0deg, rgba(245, 247, 250, 0.3) -49.83%, rgba(195, 207, 226, 0.3) 100%);
   --gradient-wellcome: linear-gradient(90deg, #000000 0%, #68a0f8 100%);

@@ -8,7 +8,7 @@ let headerHeight = getHeaderHeight();
 
 const hideHeaderOnScroll = () => {
   lastHeaderPosition = window.scrollY;
-
+  addClassItem('.header', 'scroll');
   if (
     headerHeight < lastHeaderPosition &&
     lastHeaderPosition > newHeaderPosition
