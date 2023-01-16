@@ -11,6 +11,7 @@
     @include media(tablet) {
       flex-direction: column;
       margin: auto 0;
+      padding: 15px 0;
     }
   }
 
@@ -42,9 +43,10 @@
   &__link {
     @include font-size(18, 29);
 
+    text-align: center;
     text-transform: capitalize;
 
-    &:hover {
+    &--hover {
       @include color-gradient;
 
       font-weight: 700;
@@ -54,6 +56,11 @@
         opacity: 1;
         visibility: visible;
       }
+    }
+
+    @include media(tablet) {
+      display: block;
+      margin: 0 auto;
     }
   }
 
@@ -72,5 +79,6 @@
     transform: translateX(100%);
     height: calc(var(--vh, 1vh) * 100);
     background-color: var(--color-dark-300);
+    transition: transform 0.2s;
   }
 }

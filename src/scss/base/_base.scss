@@ -17,6 +17,24 @@
     min-height: 100%;
   }
 
+  &--menu {
+    .header.hide {
+      transform: translate(0);
+    }
+
+    .nav {
+      transform: translate(0);
+    }
+
+    .burger {
+      transform: rotateY(180deg);
+
+      &__close {
+        opacity: 1;
+      }
+    }
+  }
+
   @include media(mobile-m) {
     @include font-size(12, 19);
   }
