@@ -2,7 +2,7 @@
 @use "../utils/functions/"as *;
 
 .tabs-select {
-  // display: none;
+  display: none;
   position: relative;
   border-radius: var(--radius-main);
   z-index: 0;

@@ -30,6 +30,11 @@
     background-color: var(--color-white);
   }
 
+  &--registration {
+    overflow: initial;
+    height: auto;
+  }
+
   .form {
     margin-bottom: rem(25);
 

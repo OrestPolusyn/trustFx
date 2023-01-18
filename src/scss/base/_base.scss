@@ -23,11 +23,15 @@
     }
 
     .nav {
-      transform: translate(0);
+      left: 0;
     }
 
     .burger {
       transform: rotateY(180deg);
+
+      &::before {
+        background-image: url("../icons/burger-close.svg");
+      }
 
       &__close {
         opacity: 1;

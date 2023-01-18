@@ -1,8 +1,7 @@
 import { _querySelector } from '../_config.js';
 import { toggleClassItem } from '../functions/_toggleClassItem.js';
 
-document[_querySelector]('.burger')?.addEventListener('click', e => {
-  if (!e.target.matches('.burger')) return;
+document[_querySelector]('[data-burger]')?.addEventListener('click', e => {
   toggleClassItem('.page', 'page--menu');
 });
 
