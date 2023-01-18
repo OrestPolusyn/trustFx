@@ -1,0 +1,30 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+.contact {
+  padding: rem(100) 0;
+
+  &__map {
+    width: 100%;
+    min-height: 400px;
+    object-fit: cover;
+  }
+
+  .social {
+    &__link {
+      background-color: var(--color-white);
+
+      &::before {
+        background: var(--color-gradient-main);
+      }
+    }
+  }
+
+  @include media(tablet-wide) {
+    padding: rem(70) 0;
+  }
+
+  @include media(mobile-l) {
+    padding: rem(40) 0;
+  }
+}

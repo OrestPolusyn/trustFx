@@ -1,0 +1,54 @@
+@use "../utils/mixins/"as*;
+@use "../utils/functions/"as*;
+
+.member {
+  overflow: hidden;
+  border-radius: var(--radius-main);
+  padding: 12px 17px;
+  box-shadow: var(--shadow-ligth);
+  background-color: var(--color-white);
+
+  &__main {
+    @include flex;
+
+    position: relative;
+    margin-bottom: rem(25);
+    font-weight: 700;
+
+    &::before {
+      @include line-gradient;
+
+      bottom: -13px;
+    }
+  }
+
+  &__image {
+    margin-right: rem(26);
+  }
+
+  &__title {
+    @include flex-v-center;
+    @include font-size(16, 16);
+
+    margin-bottom: 3px;
+    padding-top: 6px;
+    width: 100%;
+    min-height: 33px;
+    max-width: 110px;
+    text-align: left;
+  }
+
+  &__position {
+    @include color-gradient;
+    @include font-size(12, 14);
+
+    display: block;
+    letter-spacing: -0.03em;
+  }
+
+  &__desc {
+    @include font-size(12, 19);
+
+    letter-spacing: 0.5px;
+  }
+}

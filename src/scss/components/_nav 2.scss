@@ -1,0 +1,76 @@
+@use "../utils/mixins"as*;
+@use "../utils/functions/"as*;
+
+.nav {
+  margin: 0 auto;
+  padding-top: 4px;
+
+  &__list {
+    @include flex-all-sb;
+
+    @include media(tablet) {
+      flex-direction: column;
+      margin: auto 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: rem(70);
+
+      @include media(desktop-l) {
+        margin-right: rem(45);
+      }
+
+      @include media(desktop) {
+        margin-right: 30px;
+      }
+
+      @include media(tablet-wide) {
+        margin-right: 20px;
+      }
+
+      @include media(tablet) {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__link {
+    @include font-size(18, 29);
+
+    text-transform: capitalize;
+
+    &:hover {
+      @include color-gradient;
+
+      font-weight: 700;
+
+      +.dropdown {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  @include media(tablet) {
+    @include flex;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    flex-direction: column;
+    overflow-y: auto;
+    padding-top: var(--header-height);
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    height: calc(var(--vh, 1vh) * 100);
+    background-color: var(--color-dark-300);
+  }
+}

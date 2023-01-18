@@ -1,0 +1,142 @@
+@use "../../utils/mixins"as*;
+@use "../../utils/functions/"as*;
+
+.trade-with {
+  padding-bottom: rem(100);
+  background: var(--gradient-background);
+
+  &__title {
+    text-align: center;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    @include media(mobile-l) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-main);
+    box-shadow: var(--shadow-ligth);
+    background-color: var(--color-white);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 88px;
+      max-width: 88px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+
+      @include media(mobile-m) {
+        height: 45px;
+        max-width: 45px;
+      }
+    }
+
+    >* {
+      text-align: left;
+    }
+
+    &:nth-child(odd) {
+      padding: rem(32) rem(130) rem(32) clamp(20px, rem(30), 30px);
+
+      &::before {
+        right: clamp(15px, rem(23), 23px);
+      }
+
+      @include media(mobile-m) {
+        padding: 10px;
+        padding-right: 70px;
+      }
+    }
+
+    &:nth-child(even) {
+      padding: rem(32) clamp(20px, rem(30), 30px) rem(32) rem(130);
+
+      &::before {
+        left: clamp(20px, rem(36), 36px);
+
+        @include media(mobile-l) {
+          left: auto;
+          right: clamp(15px, rem(23), 23px);
+        }
+      }
+
+      >* {
+        margin-left: auto;
+        text-align: right;
+
+        @include media(mobile-l) {
+          margin-left: 0;
+          text-align: left;
+        }
+      }
+
+      @include media(mobile-l) {
+        padding: rem(32) rem(130) rem(32) clamp(20px, rem(30), 30px);
+      }
+
+      @include media(mobile-m) {
+        padding: 10px;
+        padding-right: 70px;
+      }
+    }
+
+    &--profit {
+      &::before {
+        background-image: url('../icons/make-profit.svg');
+      }
+    }
+
+    &--awward {
+      &::before {
+        background-image: url('../icons/awward.svg');
+      }
+    }
+
+    &--shield {
+      &::before {
+        background-image: url('../icons/shield.svg');
+      }
+    }
+
+    &--team {
+      &::before {
+        background-image: url('../icons/team.svg');
+      }
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 10px;
+
+    @include media(mobile-m) {
+      @include font-size(14, 20);
+
+      letter-spacing: -0.03em;
+    }
+  }
+
+  &__text {
+    width: 100%;
+  }
+
+  @include media(mobile-l) {
+    padding: 50px 0;
+  }
+
+  @include media(mobile-m) {
+    padding: 20px 0;
+  }
+}

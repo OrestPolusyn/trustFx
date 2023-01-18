@@ -1,0 +1,100 @@
+@use "../../utils/mixins"as*;
+@use "../../utils/functions/"as*;
+
+.hero {
+  position: relative;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 700px;
+    max-height: 710px;
+    background-image: url("../images/home/women-face.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include media(desktop) {
+      max-width: 500px;
+      max-height: 500px;
+    }
+
+    @include media(tablet) {
+      left: -10%;
+      max-width: 400px;
+      max-height: 400px;
+    }
+
+    @include media(mobile-s) {
+      left: -60%;
+      max-height: 600px;
+      background-size: 130% 90%;
+    }
+  }
+
+  &__content {
+    --translateY: -26px;
+
+    @include flex-all-center;
+
+    position: relative;
+    z-index: 2;
+    flex-direction: column;
+    height: calc(100% - var(--translateY));
+    transform: translateY(var(--translateY));
+  }
+
+  &__title {
+    @include font-size(65, 78);
+
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: var(--color-white);
+
+    span {
+      @include color-gradient;
+
+      display: block;
+    }
+
+    @include media(tablet) {
+      @include font-size(55, 55);
+    }
+
+    @include media(mobile-m) {
+      @include font-size(40, 40);
+    }
+
+    @include media(mobile-s) {
+      @include font-size(35, 35);
+    }
+  }
+
+  &__text {
+    @include font-size(18, 29);
+
+    margin-bottom: rem(33);
+    width: 100%;
+    max-width: 435px;
+    text-align: center;
+    color: var(--color-white);
+
+    @include media(mobile-m) {
+      @include font-size(16, 24);
+    }
+  }
+
+  &__btn {
+    max-width: 255px;
+  }
+}

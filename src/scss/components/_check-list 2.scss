@@ -1,0 +1,46 @@
+@use "../utils/mixins/"as*;
+@use "../utils/functions/"as*;
+
+.check-list {
+  @include font-size(12, 16);
+
+  letter-spacing: 0.042em;
+
+  &__point {
+    position: relative;
+    text-indent: 19px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      mask-image: url("../icons/check.svg");
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-size: cover;
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(180deg, #78cbc8 0%, #0898e8 100%);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 3px;
+    }
+  }
+
+  &--large.check-list {
+    @include font-size(16, 26);
+
+    margin-bottom: rem(60);
+    letter-spacing: 0.5px;
+
+    .check-list {
+      &__point {
+        &:not(:last-child) {
+          margin-bottom: 26px;
+        }
+      }
+    }
+  }
+}

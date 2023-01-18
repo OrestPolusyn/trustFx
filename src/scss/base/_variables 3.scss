@@ -1,0 +1,40 @@
+:root {
+  // base
+  --font-family-primary: "galanogrotesquealt", sans-serif;
+  --font-family-secondary: "galanogrotesque", sans-serif;
+  --content-width: 1110px;
+  --content-wide: 1742px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --container-wide: calc(var(--content-wide) + (var(--container-offset) * 2));
+
+  // colors
+  --color-white: #fff;
+  --color-dark-300: #0c224a;
+  --color-dark-400: #1a1b24;
+  --color-red-400: #e20403;
+  --color-green-400: #378352;
+  --color-green-300: #72c9cc;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #b5b5b5;
+  --color-gray-150: #919199;
+  --color-blue-400: #0596e8;
+  --color-gradient-main: linear-gradient(180deg, #80d0c8 0%, #0596e8 100%);
+  --color-gradient-stock: linear-gradient(180deg, #7f99c6 0%, #00c3d0 100%);
+  --color-gradient-crypto: linear-gradient(180deg, #d986c7 0%, #3c192c 100%);
+  --color-gradient-side: linear-gradient(90deg, #aaaaaa 0%, rgba(255, 255, 255, 0) 100%);
+  --color-gradient-border: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 50.07%, rgba(255, 255, 255, 0) 100%);
+  --color-gradient-tab: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #aaaaaa 52.31%, rgba(255, 255, 255, 0) 100%);
+  --color-gradient-forex: linear-gradient(180deg, #0d234a 0%, #6dc7cd 100%);
+  --color-tab-active: linear-gradient(90deg, #0c99e7 0%, rgba(250, 250, 250, 0) 55.49%);
+  --color-calc: linear-gradient(270deg, #0c99e7 0%, rgba(250, 250, 250, 0) 84.44%);
+  --color-gradient-article: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 51.56%, rgba(0, 0, 0, 0) 100%);
+  --gradient-background: linear-gradient(0deg, rgba(245, 247, 250, 0.3) -49.83%, rgba(195, 207, 226, 0.3) 100%);
+  --gradient-wellcome: linear-gradient(90deg, #000000 0%, #68a0f8 100%);
+  --gradient-wellcome-shadow: linear-gradient(180deg, #0b1628 10%, rgba(3, 37, 100, 0) 100%);
+  --shadow-ligth: 0 0 6px rgba(0, 0, 0, 0.02), 0px 2px 4px rgba(0, 0, 0, 0.08);
+
+  // radius
+  --radius-btn: 100px;
+  --radius-main: 6px;
+}
