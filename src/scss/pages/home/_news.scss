@@ -92,7 +92,7 @@
     }
 
     @include media(mobile-l, min) {
-      display: none;
+      display: none !important;
     }
   }
 

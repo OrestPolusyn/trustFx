@@ -5,13 +5,12 @@ $('.news__list').slick({
   arrows: false,
   dots: true,
   variableWidth: true,
+  centerMode: true,
   adaptiveHeight: true,
-  centerMode: false,
   responsive: [
     {
       breakpoint: 768,
       settings: {
-        centerMode: true,
         slidesToShow: 2,
       },
     },
