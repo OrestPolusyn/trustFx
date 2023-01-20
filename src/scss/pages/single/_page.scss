@@ -52,8 +52,7 @@
 
     blockquote {
       display: grid;
-      justify-items: flex-end;
-      grid-template-columns: 1.2fr 1fr;
+      justify-items: end;
       overflow: hidden;
       border: 1px solid var(--color-blue-400);
       border-left-width: 5px;
@@ -61,6 +60,16 @@
       padding: rem(24) rem(38) rem(19);
       font-weight: 700;
       background-color: var(--color-white);
+
+      &.partnership-trading {
+        align-items: center;
+        grid-template-columns: 1.2fr 1fr;
+
+        @include media(mobile-s) {
+          justify-items: center;
+          grid-template-columns: 1fr;
+        }
+      }
 
       .btn {
         @include media(mobile-s) {

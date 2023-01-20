@@ -4,60 +4,61 @@ sr.reveal('.header', {
   easing: 'ease',
   delay: '700',
   origin: 'top',
-  opacity: 0,
   mobile: false,
-  viewFactor: 0,
-  reset: true,
-});
-
-sr.reveal('.title--secondary, .footer__top', {
-  duration: 500,
-  distance: '30px',
-  easing: 'ease',
-  origin: 'top',
-  opacity: 0,
-  mobile: false,
-  viewFactor: 0,
-  reset: true,
 });
 
 sr.reveal(
-  '.instruments__list > *, .news .slick-track > *, .get-started__picture',
+  '.title--secondary,.wellcome__title, .footer__top,.contact__form,.sign__form ',
   {
-    duration: 700,
-    distance: '100px',
-    interval: 200,
+    duration: 500,
+    distance: '30px',
     easing: 'ease',
-    origin: 'left',
-    opacity: 0,
+    origin: 'top',
     mobile: false,
-    viewFactor: 0.5,
-    reset: true,
   }
 );
 
-sr.reveal('.hero__content > *, .start__steps > *, .get-started__content > *', {
+sr.reveal('.instruments__list > *, .get-started__picture,.investment > *', {
   duration: 700,
-  distance: '20px',
-  easing: 'ease',
+  distance: '100px',
   interval: 200,
-  delay: '200',
-  origin: 'top',
-  opacity: 0,
+  easing: 'ease',
+  origin: 'left',
   mobile: false,
-  viewFactor: 0,
-  reset: true,
 });
 
-sr.reveal('.trade-with__list > *', {
+sr.reveal(
+  '.hero__content > *, .start__steps > *, .news .slick-track > *, .get-started__content > *,.single__navigation > *,.contact__list > *, .social > *',
+  {
+    duration: 700,
+    distance: '20px',
+    easing: 'ease',
+    interval: 200,
+    delay: '200',
+    origin: 'top',
+    mobile: false,
+  }
+);
+
+sr.reveal(
+  '.single__content >*:not(.investment,.articles,.classification,.single__list,.strengths), .articles> *,.classification>*,.single__list > *',
+  {
+    duration: 700,
+    distance: '20px',
+    easing: 'ease',
+    interval: 200,
+    delay: '50',
+    origin: 'top',
+    mobile: false,
+  }
+);
+
+sr.reveal('.trade-with__list > *,.contact__map,.strengths__list >*', {
   duration: 800,
   easing: 'ease',
   interval: 200,
   delay: '200',
-  opacity: 0,
   mobile: false,
-  viewFactor: 0,
-  reset: true,
 });
 
 sr.reveal('.charts, .footer__bottom', {
@@ -66,8 +67,5 @@ sr.reveal('.charts, .footer__bottom', {
   easing: 'ease',
   delay: '800',
   origin: 'bottom',
-  opacity: 0,
   mobile: false,
-  viewFactor: 0,
-  reset: true,
 });
