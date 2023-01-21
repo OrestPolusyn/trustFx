@@ -1,60 +1,38 @@
-$('.lang').selectric({
-  disableOnMobile: false,
-  nativeOnMobile: false,
-  optionsItemBuilder: function (itemData, element, index) {
-    $('.selectric-items').removeAttr('style');
-    var val = itemData.value.toLowerCase(),
-      valIcon = val.toLowerCase();
+const setOption = (opt, container) => {
+  if (!opt.id) {
+    return opt.text.toUpperCase();
+  }
+  let $opt = $(opt.element);
+  $(container).addClass('lang-switch__option');
 
-    if (val == 'zh-TW') {
-      valIcon = 'cn';
-    } else if (val == 'yi') {
-      valIcon = 'in';
-    } else if (val == 'ja') {
-      valIcon = 'jp';
-    } else if (val == 'ar') {
-      valIcon = 'ae';
-    } else if (val == 'vi') {
-      valIcon = 'vn';
-    }
-    return element.val().length
-      ? '<a class="selectric-link" href="#"><img class="selectric-flag" src="./icons/' +
-          valIcon +
-          '.svg" alt="">' +
-          '<span>' +
-          itemData.text +
-          '</span></a>'
-      : itemData.text;
-  },
-  labelBuilder: function (el) {
-    var val = el.value.toLowerCase(),
-      valIcon = val.toLowerCase();
+  let img = $opt.attr('data-image');
 
-    if (val == 'zh-TW') {
-      valIcon = 'cn';
-    } else if (val == 'yi') {
-      valIcon = 'in';
-    } else if (val == 'ja') {
-      valIcon = 'jp';
-    } else if (val == 'ar') {
-      valIcon = 'ae';
-    } else if (val == 'vi') {
-      valIcon = 'vn';
-    }
-
-    return (
-      '<img class="selectric-flag" src="./icons/' +
-      valIcon +
-      '.svg" alt="">' +
-      '<span>' +
-      el.text +
-      '</span>'
+  if (!img) {
+    return opt.text;
+  } else {
+    return $(
+      '<span><img src="' +
+        img +
+        '" width="38" /><span> ' +
+        opt.text +
+        '</span> </span>'
     );
-  },
-  onOpen: function () {
-    $('.selectric-items').removeAttr('style').addClass('item-active');
-  },
-  onClose: function () {
-    $('.selectric-items').removeClass('item-active');
-  },
-});
+  }
+};
+
+const langSwitcher = function () {
+  $('.lang-switch').select2({
+    minimumResultsForSearch: -1,
+    width: '100%',
+    templateResult: setOption,
+    templateSelection: setOption,
+  });
+
+  $('.lang-switch').on('change', evt => {
+    let options = evt.currentTarget.options;
+    let index = evt.currentTarget.selectedIndex;
+    let href = $(options[index]).data('href');
+    if (href) window.location = href;
+  });
+};
+langSwitcher();
