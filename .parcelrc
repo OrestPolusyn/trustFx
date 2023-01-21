@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "@parcel/config-default"
+  ],
+  "namers": ["parcel-namer-without-hash"],
+  "reporters": [
+    "...",
+    "parcel-reporter-clean-dist"
+  ],
+  "transformers": {
+    "bundle-text:*": [
+      "...",
+      "@parcel/transformer-inline-string"
+    ],
+    "data-url:*": [
+      "...",
+      "@parcel/transformer-inline-string"
+    ]
+  },
+  "optimizers": {
+    "*.{gif,jpeg,jpg,png,svg,webp}": [
+      "parcel-optimizer-imagemin",
+      "..."
+    ],
+    "*.css": [
+      "@parcel/optimizer-css"
+    ]
+  },
+  "namers": [
+    "@mischnic/parcel-namer-preserve-structure",
+    "..."
+  ]
+}
